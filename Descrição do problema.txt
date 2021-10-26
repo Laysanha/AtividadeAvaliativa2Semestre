@@ -1,0 +1,19 @@
+Descrição do problema:
+O departamento de trânsito estadual necessita levantar estatísticas referente aos
+acidentes ocorridos nas rodovias estaduais.
+Para isso, conta com um cadastro de rodovia, que possui um nome e a quilometragem
+total.
+É feito um cadastro também dos condutores e dos veículos envolvidos nos acidentes.
+Todos os condutores possuem nome, idade e sexo. Também é armazenado se o
+mesmo estava ou não embriagado.
+Todos os veículos possuem o ano de fabricação e o condutor.
+Para cada acidente serão registradas as seguintes informações:
+• A rodovia em que ocorreu o acidente.
+• Quantidade de vítimas fatais
+• A lista de veículos envolvidos no acidente
+O programa deve permitir:
+• Cadastrar rodovias
+• Cadastrar Acidentes (com os respectivos veículos e seus condutores)
+• Listar todos os acidentes cujo algum condutor estava embriagado
+• Mostrar qual rodovia que possui mais acidentes com vítimas fatais
+• Quantidade de acidentes por rodovia
