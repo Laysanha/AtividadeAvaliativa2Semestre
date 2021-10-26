@@ -7,6 +7,8 @@ public class Acidentes {
 	private Veiculo veiculo;
 	private int qtdVitimas;
 	
+	//tava pensando que era aqui que deveria ser o array de veiculo, não?
+	
 	public Rodovia getRodovia() {
 		return rodovia;
 	}
@@ -38,7 +40,7 @@ public class Acidentes {
 	}
 	
 	public void registraAcidente(){
-		setQtdVitimas(Integer.parseInt(JOptionPane.showInputDialog("Nome do condutor:")));
+		setQtdVitimas(Integer.parseInt(JOptionPane.showInputDialog("Quantas vitimas fatais:")));
 	}
 	
 	@Override
