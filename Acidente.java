@@ -1,14 +1,44 @@
 package laysasantiagoalfredo;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
-public class Acidentes {
-	private Rodovia rodovia;
-	private Veiculo veiculo;
-	private int qtdVitimas;
+public class Acidente {
 	
-	//tava pensando que era aqui que deveria ser o array de veiculo, nÃ£o?
+	private ArrayList<Veiculo> veiculos;
+	Rodovia rodovia;
+	private int qtd;
 	
+	public Acidente() {
+		super();
+		this.veiculos = new ArrayList<Veiculo>();
+		this.rodovia = new Rodovia();
+		this.qtd = 0;
+	}
+	
+	public void cadastraCarros () {
+		int totalCadastro = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar quantos carros:"));
+		for(int i = 0; i == totalCadastro; i++) {
+			Veiculo v = new Veiculo();
+			v.cadastraVeiculo();
+			veiculos.add(v);	
+		}
+	}
+	
+	public void cadastraAcidente() {
+		setQtd( Integer.parseInt(JOptionPane.showInputDialog("Quantas vítimas fatais:")));	
+		cadastraCarros();
+	}
+
+	public ArrayList<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+	public void setVeiculos(ArrayList<Veiculo> veiculos) {
+		this.veiculos = veiculos;
+	}
+
 	public Rodovia getRodovia() {
 		return rodovia;
 	}
@@ -17,34 +47,17 @@ public class Acidentes {
 		this.rodovia = rodovia;
 	}
 
-	public Veiculo getVeiculo() {
-		return veiculo;
+	public int getQtd() {
+		return qtd;
 	}
 
-	public void setVeiculo(Veiculo veiculo) {
-		this.veiculo = veiculo;
+	public void setQtd(int qtd) {
+		this.qtd = qtd;
 	}
 
-	public int getQtdVitimas() {
-		return qtdVitimas;
-	}
-
-	public void setQtdVitimas(int qtdVitimas) {
-		this.qtdVitimas = qtdVitimas;
-	}
-	
-	public Acidentes() {
-//		this.rodovia = rodovia;
-//		this.veiculo = veiculo;
-		this.qtdVitimas = 0;
-	}
-	
-	public void registraAcidente(){
-		setQtdVitimas(Integer.parseInt(JOptionPane.showInputDialog("Quantas vitimas fatais:")));
-	}
-	
 	@Override
 	public String toString() {
-		return "Acidentes [rodovia=" + rodovia + ", veiculo=" + veiculo + ", qtdVitimas=" + qtdVitimas + "]";
-	}
+		return "Acidente [veiculos=" + veiculos + ", rodovia=" + rodovia + ", qtd=" + qtd + "]";
+	} 
+	
 }
