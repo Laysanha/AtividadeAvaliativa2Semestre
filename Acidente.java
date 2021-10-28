@@ -7,7 +7,7 @@ public class Acidentes {
 	private Veiculo veiculo;
 	private int qtdVitimas;
 	
-	//tava pensando que era aqui que deveria ser o array de veiculo, n„o?
+	//tava pensando que era aqui que deveria ser o array de veiculo, n√£o?
 	
 	public Rodovia getRodovia() {
 		return rodovia;
