@@ -1,15 +1,21 @@
 package laysasantiagoalfredo;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class Veiculo {
 	
-	Condutor condutor;
-	String anoFabric;
+	ArrayList<Veiculo> veiculos;
+	private String anoFabric;
+	private Condutor condutor;
 	
-	public Veiculo() {
-		this.condutor = new Condutor();
-		this.anoFabric = "";
+	public ArrayList<Veiculo> getVeiculos() {
+		return veiculos;
+	}
+
+	public void setVeiculos(ArrayList<Veiculo> veiculos) {
+		this.veiculos = veiculos;
 	}
 
 	public String getAnoFabric() {
@@ -19,13 +25,19 @@ public class Veiculo {
 	public void setAnoFabric(String anoFabric) {
 		this.anoFabric = anoFabric;
 	}
-	
+
 	public Condutor getCondutor() {
 		return condutor;
 	}
 
 	public void setCondutor(Condutor condutor) {
 		this.condutor = condutor;
+	}
+
+	public Veiculo() {
+		this.veiculos =  new ArrayList<>();
+		this.anoFabric = "";
+		this.condutor = new Condutor();
 	}
 	
 	public void cadastraVeiculo() {
@@ -35,7 +47,6 @@ public class Veiculo {
 
 	@Override
 	public String toString() {
-		return "veiculo [anoFabric=" + anoFabric + "]";
+		return "Veiculo [anoFabric=" + anoFabric + "]";
 	}
-
 }

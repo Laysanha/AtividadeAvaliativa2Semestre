@@ -3,15 +3,10 @@ package laysasantiagoalfredo;
 import javax.swing.JOptionPane;
 
 public class Rodovia {
-
+	
 	private String nomeRodovia;
 	private String quilTotal;
-
-	public Rodovia() {
-		this.nomeRodovia = "";
-		this.quilTotal = "";
-	}
-
+	
 	public String getNomeRodovia() {
 		return nomeRodovia;
 	}
@@ -28,14 +23,19 @@ public class Rodovia {
 		this.quilTotal = quilTotal;
 	}
 	
-	public void cadastra() {
-		setNomeRodovia(JOptionPane.showInputDialog("Nome da rodovia:"));
-		setQuilTotal(JOptionPane.showInputDialog("Nome da quilometragem tota"));
+	public Rodovia() {
+		this.nomeRodovia = "";
+		this.quilTotal = "";
 	}
 	
+	public void cadastra() {
+		setNomeRodovia(JOptionPane.showInputDialog("Nome do rodovia:"));
+		setQuilTotal(JOptionPane.showInputDialog("A quilometragem total:"));
+	}
+
 	@Override
 	public String toString() {
-		return "rodovia [nomeRodovia=" + nomeRodovia + ", quilTotal=" + quilTotal + "]";
-	}
-	
+		return "Rodovia [nomeRodovia=" + nomeRodovia + ", quilTotal=" + quilTotal + "]";
+	}	
 }
+
