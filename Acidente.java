@@ -5,10 +5,32 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Acidente {
-	private ArrayList<Veiculo> veiculos;
+	
+	ArrayList<Veiculo> veiculos;
 	private Rodovia rodovia;
 	private int qtd;
-		
+	
+	public Acidente() {
+		this.veiculos = new ArrayList<Veiculo>();
+		this.rodovia = new Rodovia();
+		this.qtd = 0;
+	}
+	
+	public void cadastraCarros() {
+		int totalCadastro = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar quantos carros:"));
+		for(int i = 1; i <= totalCadastro; i++) {
+			Veiculo v = new Veiculo();
+			v.cadastraVeiculo();
+			veiculos.add(v);	
+		}
+	}
+	
+	public void cadastraAcidente(Rodovia rod) {
+		setQtd( Integer.parseInt(JOptionPane.showInputDialog("Quantas vítimas fatais:")));	
+		cadastraCarros();
+		rodovia = rod;
+	}
+
 	public ArrayList<Veiculo> getVeiculos() {
 		return veiculos;
 	}
@@ -32,24 +54,10 @@ public class Acidente {
 	public void setQtd(int qtd) {
 		this.qtd = qtd;
 	}
-	
-	public Acidente() {
-		this.veiculos = new ArrayList<Veiculo>();
-		this.rodovia = new Rodovia();
-		this.qtd = 0;
-	}
-	
-	public void cadastraCarros () {
-		int totalCadastro = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar quantos carros:"));
-		for(int i = 0; i == totalCadastro; i++) {
-			Veiculo v = new Veiculo();
-			v.cadastraVeiculo();
-			veiculos.add(v);	
-		}
-	}
 
 	@Override
 	public String toString() {
-		return "Acidentes [veiculos=" + veiculos + ", rodovia=" + rodovia + ", qtd=" + qtd + "]";
-	}
+		return "Acidente [veiculos=" + veiculos + ", rodovia=" + rodovia + ", qtd=" + qtd + "]";
+	} 
+	
 }

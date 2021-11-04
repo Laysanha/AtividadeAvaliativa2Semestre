@@ -5,9 +5,17 @@ import javax.swing.JOptionPane;
 public class Condutor {
 	
 	private String nome;
+	private Integer idade;
 	private char sexo;
-	private int idade;
-	private boolean embriagado;
+	private boolean embriaguez;
+	
+
+	public Condutor() {
+		this.nome = "";
+		this.idade = 0;
+		this.sexo = ' ';
+		this.embriaguez = false;
+	}
 	
 	public String getNome() {
 		return nome;
@@ -15,6 +23,14 @@ public class Condutor {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
 	}
 
 	public char getSexo() {
@@ -25,43 +41,30 @@ public class Condutor {
 		this.sexo = sexo;
 	}
 
-	public int getIdade() {
-		return idade;
+	public boolean getEmbriaguez() {
+		return embriaguez;
 	}
 
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public boolean getEmbriagado() {
-		return embriagado;
-	}
-
-	public void setEmbriagado(char embriagado) {	
+	public void setEmbriaguez(char embriaguez) {
 		
-		if (embriagado == 'S') {
-			this.embriagado =  true; 
-		} else if(embriagado == 'N') {
-			this.embriagado = false; 
+		if (embriaguez == 'S') {
+			this.embriaguez = true;
+		} 
+		else if (embriaguez == 'N') {
+			this.embriaguez = false;
 		}
 	}
 	
-	public Condutor() {
-		this.nome = "";
-		this.sexo = ' ';
-		this.idade = 0;
-		this.embriagado = false;
+	public void cadastra() {
+		setNome(JOptionPane.showInputDialog("Nome do condutor:"));
+		setIdade(Integer.parseInt(JOptionPane.showInputDialog("Idade do condutor:")));
+		setSexo(JOptionPane.showInputDialog("Seu sexo(F/M):").charAt(0));
+		setEmbriaguez(JOptionPane.showInputDialog("Possui embriaguez (S/N)").toUpperCase().charAt(0));
 	}
 	
-	public void cadastra() { 
-		setNome(JOptionPane.showInputDialog("Nome do condutor:"));
-		setSexo(JOptionPane.showInputDialog("Sexo do condutor(M/F):").toUpperCase().charAt(0));
-		setIdade(Integer.parseInt(JOptionPane.showInputDialog("Idade co condutor:")));
-		setEmbriagado(JOptionPane.showInputDialog("Embriagado(S/N):").toUpperCase().charAt(0));
-	}
-
 	@Override
 	public String toString() {
-		return "Condutor [nome=" + nome + ", sexo=" + sexo + ", idade=" + idade + ", embriagado=" + embriagado + "]";
+		return "condutor [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", embriaguez=" + embriaguez + "]";
 	}
+
 }
